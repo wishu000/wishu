@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff66b2;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            animation: fadeIn 3s ease-in;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2; }
+            to { text-shadow: 0 0 20px #ff66b2, 0 0 30px #ff66b2; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .sakura, .hearts, .balloons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .petal, .heart, .balloon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff66b2;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            animation: fall 10s infinite ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .heart, .balloon {
+            border-radius: 50%;
+            background-color: #ff3366;
+            transform: rotate(0deg);
+        }
+
+        .balloon::before, .heart::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: inherit;
+            border-radius: 50%;
+        }
+
+        .balloon::after, .heart::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: inherit;
+            border-radius: 50%;
+        }
+
+        .petal:nth-child(odd), .heart:nth-child(odd), .balloon:nth-child(odd) {
+            background-color: #ff99cc;
+            animation-duration: 12s;
+        }
+
+        .petal:nth-child(even), .heart:nth-child(even), .balloon:nth-child(even) {
+            background-color: #ff66b2;
+            animation-duration: 15s;
+        }
+
+        .petal:nth-child(3), .heart:nth-child(3), .balloon:nth-child(3) {
+            background-color: #ffffff;
+            animation-duration: 18s;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 1.2em;
+            animation: fadeIn 3s ease-in;
+        }
+
+        .balloon-string {
+            position: absolute;
+            width: 2px;
+            height: 80px;
+            background-color: #ffffff;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .balloon {
+            animation: float 6s ease-in-out infinite;
+            width: 30px;
+            height: 40px;
+            background-color: #ffccff;
+            border-radius: 50%;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-30px) rotate(0deg); }
+            100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+            100% { transform: translateY(800px) rotate(20deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday, Snehaa!</h1>
+        <p>
+            On this special day of yours, I want to remind you just how much you mean to me. Like Doraemon always brings joy and laughter, you filled my life with endless happiness and love. Your smile will always be my sunshine, and your laughter will be always my melody.
+
+Watching you turn 15 today, I am so proud of the incredible person you are becoming. You bring so much joy to everyone around you, and I feel incredibly lucky to get by your side. I hope your birthday is as wonderful and magical as you are.
+
+Here's to celebrating you today and always. May your day be filled with laughter, love, and all your favorite things. Happy Birthday dear!.
+        </p>
+        <div class="footer">
+        </div>
+    </div>
+
+    <!-- Animated Falling Sakura Petals -->
+    <div class="sakura">
+        <div class="petal" style="left: 10%;"></div>
+        <div class="petal" style="left: 25%;"></div>
+        <div class="petal" style="left: 40%;"></div>
+        <div class="petal" style="left: 55%;"></div>
+        <div class="petal" style="left: 70%;"></div>
+        <div class="petal" style="left: 85%;"></div>
+    </div>
+
+    <!-- Animated Floating Hearts -->
+    <div class="hearts">
+        <div class="heart" style="left: 15%;"></div>
+        <div class="heart" style="left: 35%;"></div>
+        <div class="heart" style="left: 55%;"></div>
+        <div class="heart" style="left: 75%;"></div>
+    </div>
+
+    <!-- Animated Floating Balloons -->
+    <div class="balloons">
+        <div class="balloon" style="left: 20%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 80%;"></div>
+    </div>
+</body>
+</html>
